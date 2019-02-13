@@ -13,6 +13,12 @@ def first_challenge
     }
   }
 
-  contacts["Freddy Mercury"][:favorite_icecream_flavors].shift
-  contacts
+contacts["Freddy Mercury"].each do |keys, values| #attribute is the keys (name, email etc) & data is the values
+    if keys == :favorite_icecream_flavors
+      values.delete_if do |flavour|
+        flavour == "strawberry"
+        end
+      end
+   end
+   contacts
 end
