@@ -1,3 +1,5 @@
+require 'pry'
+
 def first_challenge
   contacts = {
     "Jon Snow" => {
@@ -13,8 +15,16 @@ def first_challenge
     }
   }
 
-  #your code here
-
+  #easy way to delete "strawberry" without iteration
+  #contacts["Freddy Mercury"][:favorite_icecream_flavors].delete("strawberry")
+  
+  contacts.each do |person, data|
+    data.each do |attribute, value|
+      if attribute == :favorite_icecream_flavors 
+        value.delete_if {|flavor| flavor =="strawberry" }
+      end
+    end
+  end 
 
   #remember to return your newly altered contacts hash!
   contacts
