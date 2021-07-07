@@ -8,6 +8,9 @@ def second_challenge
 
   #code your solution here!
 
-  
-
+  all_groceries = []
+  groceries.each do |cat, item|
+    all_groceries << item
+  end
+all_groceries.flatten
 end
